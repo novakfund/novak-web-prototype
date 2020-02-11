@@ -1,5 +1,6 @@
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
+import Callback from "../pages/callback"
 
 //Check window object loaded
 const isBrowser = typeof window !== "undefined"
@@ -61,7 +62,7 @@ const setSession = (cb = () => {}) => (err, authResult) => {
         //Get user
         user = authResult.idTokenPayload
         
-        localStorage.setItem("IsLoggedIn", true)
+        localStorage.setItem("isLoggedIn", true)
         navigate("/account")
         cb()
     }
@@ -79,4 +80,10 @@ export const handleAuthentication = () => {
 //Get user profile is exist
 export const getProfile = () => {
     return user
+}
+
+//Checks if authenticated and get appropriate token
+export const silentAuth = callback => {
+    if (!isAuthenticated()) return callback()
+    auth.checkSession({}, setSession(callback))
 }
