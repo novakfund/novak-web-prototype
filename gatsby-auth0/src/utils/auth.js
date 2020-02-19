@@ -33,15 +33,30 @@ export const isAuthenticated = () => {
     return localStorage.getItem("isLoggedIn") === "true"
 }
 
-//Called auth object to login
-export const login = () => {
+//TODO: add logic here to check if user is verified
+export const isVerified = () => {
     if(!isBrowser) {
         return;
     }
 
-    auth.authorize()
+    console.log(user.email_verified)
 }
 
+//Called login user
+export const login = (email, password) => {
+    if(!isBrowser) {
+        return;
+    }
+
+    auth.login({
+        email: email,
+        password: password,
+        realm: process.env.AUTH0_DATABASE
+    })
+}
+
+//Sets all the session magic that auth0 handles
+//TODO: look into this later
 const setSession = (cb = () => {}) => (err, authResult) => {
     if (err) {
         navigate("/")
@@ -91,4 +106,20 @@ export const silentAuth = callback => {
 export const logout = () => {
     localStorage.setItem("isLoggedIn", false)
     auth.logout()
+}
+
+//Sign up new user
+export const signup = (email, password) => {
+    if(!isBrowser) {
+        return;
+    }
+
+    auth.signup({
+        connection: process.env.AUTH0_DATABASE,
+        email: email,
+        password: password
+    }, err => {
+        if(err) return alert('Something wrong' + err)
+        return alert('success')
+    })
 }

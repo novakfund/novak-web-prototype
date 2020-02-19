@@ -1,6 +1,6 @@
 import React from "react"
-import { Router } from "@reach/router"
-import { login, isAuthenticated, getProfile, logout } from "../utils/auth"
+import { Router, navigate } from "@reach/router"
+import { login, isAuthenticated, getProfile, logout, isVerified } from "../utils/auth"
 import { Link } from "gatsby"
 
 const Home = ({user}) => {
@@ -11,7 +11,7 @@ const Billing = () => <p>Billing</p>
 
 const Account = () => {
     if (!isAuthenticated()) {
-        login()
+        navigate("/login")
         return <p>Redirecting to login...</p>
     }
 
