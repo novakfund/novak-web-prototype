@@ -44,6 +44,7 @@ export const isVerified = () => {
 
 //Called login user
 export const login = (email, password) => {
+    //TODO: handle a unauthenticated login return or in setSession
     if(!isBrowser) {
         return;
     }

@@ -6,7 +6,7 @@ import Navigation from "./navigation"
 export default ({ children }) => (
     <div>
         <Navigation />
-        <div class="container mx-auto p-6">
+        <div className="container mx-auto p-6">
             {children}
         </div>
     </div>

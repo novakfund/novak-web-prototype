@@ -1,6 +1,9 @@
 import React from "react"
 import { isAuthenticated, signup, login } from "../utils/auth"
+import { Link } from "gatsby"
 import { navigate } from "@reach/router"
+import Layout from "../components/layout"
+import LoginForm from "../components/account/loginForm"
 
 //This is a stateful object
 export default class Login extends React.Component {
@@ -36,54 +39,25 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <>
-            <form id="signup">
-                <fieldset>
-                    <legend>Login</legend>
-                    <p>
-                        <input 
-                            type="email" 
-                            name="loginEmail"
-                            placeholder="Email" 
-                            required 
-                            value={this.state.loginEmail} 
-                            onChange={this.handleInputChange} />
-                    </p>
-                    <p>
-                        <input 
-                            type="password" 
-                            name="loginPassword"
-                            placeholder="Password" 
-                            required 
-                            value={this.state.loginPassword}
-                            onChange={this.handleInputChange} />
-                    </p>
-                    <button onClick={this.handleSubmitLogin}>Login</button>
-                </fieldset>
-                <fieldset>
-                    <legend>Sign up</legend>
-                    <p>
-                        <input 
-                            type="email" 
-                            name="signUpEmail"
-                            placeholder="Email" 
-                            required 
-                            value={this.state.signUpEmail} 
-                            onChange={this.handleInputChange} />
-                    </p>
-                    <p>
-                        <input 
-                            type="password" 
-                            name="signUpPassword"
-                            placeholder="Password" 
-                            required 
-                            value={this.state.signUpPassword}
-                            onChange={this.handleInputChange} />
-                    </p>
-                    <button onClick={this.handleSubmitSignUp}>Sign Up</button>
-                </fieldset>
-            </form>
-            </>
+            <Layout>
+                <div className="flex items-center flex-col justify-center mx-auto">
+                    <div>
+                        <h1 className="font-bold text-xl">Login Required</h1>
+                    </div>
+                    <div>
+                        <p className="text-gray-600 italic">The NOVAK Portal is accessible to members only</p>
+                    </div>
+                </div>
+                <LoginForm />
+                <div className="flex items-center flex-col justify-center mx-auto pt-10">
+                    <div>
+                        <p className="text-gray-600 italic">Not a member?</p>
+                        <Link className="hover:underline text-blue-500" to="#">
+                            Request to join!
+                        </Link>
+                    </div>
+                </div>
+            </Layout>
         )
     }
 }
