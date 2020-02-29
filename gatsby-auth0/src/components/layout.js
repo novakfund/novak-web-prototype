@@ -5,9 +5,9 @@ import Navigation from "./navigation"
 import Footer from "./footer"
 
 export default ({ children }) => (
-    <div className="flex flex-col h-screen justify-between">
+    <div className="flex flex-col">
         <Navigation />
-        <div className="container flex-grow my-6 mx-6 md:mx-auto">
+        <div className="container h-screen my-6 mx-6 md:mx-auto">
             {children}
         </div>
         <Footer />
