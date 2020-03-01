@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { isAuthenticated, logout } from "../utils/auth"
 
 
 export default class Navigation extends React.Component {
@@ -28,9 +29,25 @@ export default class Navigation extends React.Component {
                     <Link to="/about-us" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
                         About Us
                     </Link>
-                    <Link to="/account" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
+                    {isAuthenticated() && 
+                        <>
+                        <Link to="/account/settings" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
+                        Settings
+                        </Link>
+                        <Link to="/account/status" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
+                        Fund Status
+                        </Link>
+                        </>
+                    }
+                    <Link to="/account/home" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
                         Account
                     </Link>
+                    {isAuthenticated() &&
+                        <a className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4" href="#logout" onClick={e => {
+                            logout()
+                            e.preventDefault()
+                        }} >Logout</a>
+                    }
                     <div>
                     </div>
                 </div>
