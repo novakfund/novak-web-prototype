@@ -1,13 +1,10 @@
 import React from "react"
 import { Router, navigate } from "@reach/router"
-import { login, isAuthenticated, getProfile, logout, isVerified } from "../utils/auth"
-import { Link } from "gatsby"
-
-const Home = ({user}) => {
-    return <p>Hi, {user.name ? user.name : "friend"}!</p>
-}
-const Settings = () => <p>Settings</p>
-const Billing = () => <p>Billing</p>
+import { isAuthenticated, getProfile, logout } from "../utils/auth"
+import Layout from "../components/layout"
+import Home from "./account/home"
+import Settings from "./account/settings"
+import Status from "./account/status"
 
 const Account = () => {
     if (!isAuthenticated()) {
@@ -18,23 +15,13 @@ const Account = () => {
     const user = getProfile()
 
     return (
-        <>
-            <nav>
-                <Link to="/account">Home</Link>{" "}
-                <Link to="/account/settings">Settings</Link>{" "}
-                <Link to="/account/billing">Billing</Link>{" "}
-                <a href="#logout" onClick={e => {
-                    logout()
-                    e.preventDefault()
-                }}
-                >Log Out</a>
-            </nav>
-            <Router>
-                <Home path="/account" user={user} />
+        <Layout>
+            <Router className="py-6 px-6">
+                <Home path="/account/home" />
                 <Settings path="/account/settings" />
-                <Billing path="/account/billing" />
+                <Status path="/account/status" />
             </Router>
-        </>
+        </Layout>
     )
 }
 
