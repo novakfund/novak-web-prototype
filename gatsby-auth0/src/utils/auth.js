@@ -2,6 +2,10 @@ import auth0 from "auth0-js"
 import { navigate } from "gatsby"
 import Callback from "../pages/callback"
 
+//TODO: do some more thorough account check here?
+//TODO: don't allow user access until they validate their email
+//TODO: look into how to use Auth0 to access APIs hosted on GCP
+
 //Check window object loaded
 const isBrowser = typeof window !== "undefined"
 
@@ -79,7 +83,7 @@ const setSession = (cb = () => {}) => (err, authResult) => {
         user = authResult.idTokenPayload
         
         localStorage.setItem("isLoggedIn", true)
-        navigate("/account")
+        navigate("/account/home")
         cb()
     }
 }
