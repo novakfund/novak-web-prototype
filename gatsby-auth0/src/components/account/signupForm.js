@@ -99,7 +99,8 @@ export default class SignUpForm extends React.Component {
                     name="inputEmail"
                     value={this.state.inputFirstName} 
                     onChange={this.handleInputChange} 
-                    type="text" />
+                    type="text"
+                    placeholder="Satoshi" />
               </div>
               <div>
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="lastName">
@@ -109,7 +110,8 @@ export default class SignUpForm extends React.Component {
                     name="inputEmail"
                     value={this.state.inputLastName} 
                     onChange={this.handleInputChange} 
-                    type="text" />
+                    type="text"
+                    placeholder="Nakamoto" />
               </div>
           </div>
           {(this.state.firstNameError || this.state.lastNameError) && 
