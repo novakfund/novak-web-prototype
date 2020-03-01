@@ -52,7 +52,7 @@ export default class Login extends React.Component {
                 <div className="flex items-center flex-col justify-center mx-auto pt-10">
                     <div>
                         <p className="text-gray-600 italic">Not a member?</p>
-                        <Link className="hover:underline text-blue-500" to="#">
+                        <Link className="hover:underline text-blue-500" to="/sign-up">
                             Request to join!
                         </Link>
                     </div>

@@ -25,11 +25,8 @@ export default class Navigation extends React.Component {
                     </button>
                 </div>
                 <div className={(this.state.isMenuActive ? 'flex' : 'hidden') + " w-full block flex-col justify-center md:justify-end md:flex md:items-center md:flex-row md:w-auto md:flex-row"}>
-                    <Link to="#" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
+                    <Link to="/about-us" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
                         About Us
-                    </Link>
-                    <Link to="#" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
-                        Contact
                     </Link>
                     <Link to="/account" className="flex justify-end mt-4 md:my-auto text-blue-200 hover:text-white mr-4">
                         Account

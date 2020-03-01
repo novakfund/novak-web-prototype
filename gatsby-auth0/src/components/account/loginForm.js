@@ -1,7 +1,7 @@
 import React from "react"
 import { login } from "../../utils/auth"
 
-export default class Navigation extends React.Component {
+export default class LoginForm extends React.Component {
 
   state = {
     emailError: false,

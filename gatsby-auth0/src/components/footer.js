@@ -14,7 +14,7 @@ export default () => (
             <div className="flex flex-col">
                 <h1 className="font-semibold">Membership</h1>
                 <Link className="hover:underline" to="/account">Member Portal</Link>
-                <Link className="hover:underline" to="/contact">Join Us</Link>
+                <Link className="hover:underline" to="/sign-up">Join Us</Link>
             </div>
         </div>
     </div>
