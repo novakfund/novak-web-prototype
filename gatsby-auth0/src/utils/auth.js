@@ -1,6 +1,5 @@
 import auth0 from "auth0-js"
 import { navigate } from "gatsby"
-import Callback from "../pages/callback"
 
 //TODO: do some more thorough account check here?
 //TODO: don't allow user access until they validate their email
