@@ -7,7 +7,7 @@ import Footer from "./footer"
 export default ({ children }) => (
     <div className="flex flex-col">
         <Navigation />
-        <div className="container h-screen my-6 mx-6 md:mx-auto px-10">
+        <div className="flex flex-col h-screen">
             {children}
         </div>
         <Footer />
