@@ -74,7 +74,7 @@ export default class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div className="w-full mx-auto px-3 md:px-20 pt-4">
+      <div className="max-w-4xl mx-auto px-3 md:px-20 pt-4">
         <form className="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" for="username">
@@ -91,7 +91,7 @@ export default class SignUpForm extends React.Component {
             }
           </div>
           <div className="flex flex-col md:flex-row justify-between mb-4">
-              <div>
+              <div className="w-full mr-4">
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="firstName">
                     First Name
                     </label>
@@ -102,7 +102,7 @@ export default class SignUpForm extends React.Component {
                     type="text"
                     placeholder="Satoshi" />
               </div>
-              <div>
+              <div className="w-full">
                 <label className="block text-gray-700 text-sm font-bold mb-2" for="lastName">
                     Last Name
                     </label>
@@ -121,7 +121,7 @@ export default class SignUpForm extends React.Component {
             <label className="block text-gray-700 text-sm font-bold mb-2" for="exerpt">
               About You
             </label>
-            <textarea className={(this.state.exerpError ? 'border-red-500' : '') + " shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline resize-y"}
+            <textarea className={(this.state.exerpError ? 'border-red-500' : '') + " shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline resize-y h-48"}
             name="inputExerpt"
             value={this.state.inputExerpt} 
             onChange={this.handleInputChange} 
