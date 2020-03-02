@@ -52,10 +52,18 @@ export const login = (email, password) => {
     return
   }
 
-  auth.login({
-    email: email,
-    password: password,
-    realm: process.env.AUTH0_DATABASE,
+  //Make this a promise to catch the error if one exists
+  //TODO: better way to do this?
+  return new Promise(resolve => {
+    auth.login({
+        email: email,
+        password: password,
+        realm: process.env.AUTH0_DATABASE,
+      }, (e) => {
+          if (e) {
+              resolve(e)
+          }
+      })
   })
 }
 

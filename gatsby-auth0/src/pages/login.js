@@ -33,7 +33,8 @@ export default class Login extends React.Component {
 
   handleSubmitLogin = event => {
     event.preventDefault()
-    login(this.state.loginEmail, this.state.loginPassword)
+    const result = login(this.state.loginEmail, this.state.loginPassword)
+    console.log(result)
   }
 
   render() {

@@ -7,6 +7,7 @@ export default class LoginForm extends React.Component {
     passwordError: false,
     inputEmail: "",
     inputPassword: "", //TODO: look up best practice for this
+    loginError: ""
   }
 
   handleInputChange = event => {
@@ -23,7 +24,10 @@ export default class LoginForm extends React.Component {
     event.preventDefault()
 
     if (this.validateLogin()) {
-      login(this.state.inputEmail, this.state.inputPassword)
+      var x = login(this.state.inputEmail, this.state.inputPassword)
+        .then(e => { 
+          this.setState({loginError: e.description})
+      })
     }
 
     return
@@ -96,6 +100,11 @@ export default class LoginForm extends React.Component {
             {this.state.passwordError && (
               <p className="text-red-500 text-xs italic">
                 Please enter a password
+              </p>
+            )}
+            {this.state.loginError && (
+              <p className="text-red-500 text-xs italic">
+                {this.state.loginError}
               </p>
             )}
           </div>
