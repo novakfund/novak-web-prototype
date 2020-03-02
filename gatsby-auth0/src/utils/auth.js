@@ -108,7 +108,9 @@ export const silentAuth = callback => {
 
 export const logout = () => {
   localStorage.setItem("isLoggedIn", false)
-  auth.logout()
+  auth.logout({
+    returnTo: window.location.origin
+  })
 }
 
 //Sign up new user
