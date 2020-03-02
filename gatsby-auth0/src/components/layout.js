@@ -5,11 +5,9 @@ import Navigation from "./navigation"
 import Footer from "./footer"
 
 export default ({ children }) => (
-    <div className="flex flex-col">
-        <Navigation />
-        <div className="flex flex-col min-h-screen">
-            {children}
-        </div>
-        <Footer />
-    </div>
+  <div className="flex flex-col">
+    <Navigation />
+    <div className="flex flex-col min-h-screen">{children}</div>
+    <Footer />
+  </div>
 )

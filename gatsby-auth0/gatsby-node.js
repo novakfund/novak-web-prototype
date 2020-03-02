@@ -1,36 +1,36 @@
 exports.onCreatePage = async ({ page, actions }) => {
-    const { createPage } = actions
-  
-    // page.matchPath is a special key that's used for matching pages
-    // only on the client.
-    //This will match anything with /account in path and create it
-    //via the account route
-    if (page.path.match(/^\/account/)) {
-      page.matchPath = "/account/*"
-  
-      // Update the page.
-      createPage(page)
-    }
-  }
+  const { createPage } = actions
 
-  exports.onCreateWebpackConfig = ({ stage, loaders, action }) => {
-    if (stage ==="build-html") {
-      /*
+  // page.matchPath is a special key that's used for matching pages
+  // only on the client.
+  //This will match anything with /account in path and create it
+  //via the account route
+  if (page.path.match(/^\/account/)) {
+    page.matchPath = "/account/*"
+
+    // Update the page.
+    createPage(page)
+  }
+}
+
+exports.onCreateWebpackConfig = ({ stage, loaders, action }) => {
+  if (stage === "build-html") {
+    /*
      * During the build step, `auth0-js` will break because it relies on
      * browser-specific APIs. Fortunately, we don’t need it during the build.
      * Using Webpack’s null loader, we’re able to effectively ignore `auth0-js`
      * during the build. (See `src/utils/auth.js` to see how we prevent this
      * from breaking the app.)
      */
-     actions.setWebpackCOnfig({
-        module: {
-          rules: [
-            {
-              test: /auth0-js/,
-              use: loaders.null(),
-            },
-          ],
-        },
-      })
-    }
+    actions.setWebpackCOnfig({
+      module: {
+        rules: [
+          {
+            test: /auth0-js/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
   }
+}

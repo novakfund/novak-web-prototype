@@ -3,8 +3,7 @@ import Layout from "../components/layout"
 import SignUpForm from "../components/account/signupForm"
 
 export default () => (
-    <Layout>
-        <SignUpForm />
-    </Layout>
-
+  <Layout>
+    <SignUpForm />
+  </Layout>
 )
