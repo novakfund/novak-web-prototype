@@ -13,7 +13,7 @@ exports.onCreatePage = async ({ page, actions }) => {
   }
 }
 
-exports.onCreateWebpackConfig = ({ stage, loaders, action }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     /*
      * During the build step, `auth0-js` will break because it relies on
@@ -22,7 +22,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, action }) => {
      * during the build. (See `src/utils/auth.js` to see how we prevent this
      * from breaking the app.)
      */
-    actions.setWebpackCOnfig({
+    actions.setWebpackConfig({
       module: {
         rules: [
           {
