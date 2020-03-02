@@ -49,7 +49,7 @@ export default class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="max-w-4xl mx-auto px-3 md:px-20 pt-4">
+      <div className="max-w-lg w-4/5 mx-auto px-3 md:px-20 pt-4">
         <form className="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <div className="mb-4">
             <label

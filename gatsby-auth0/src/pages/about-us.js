@@ -27,7 +27,7 @@ export default () => (
             background="Crypto enthusiast"
           />
         </div>
-        <div className="flex justify-center">
+        <div className="flex md:flex-row flex-col justify-center">
           <TeamEntry
             name="Person Name"
             position="LT"
@@ -39,7 +39,7 @@ export default () => (
             background="Crypto enthusiast"
           />
         </div>
-        <div className="flex justify-center">
+        <div className="flex md:flex-row flex-col justify-center">
           <TeamEntry
             name="Person Name"
             position="LT"
