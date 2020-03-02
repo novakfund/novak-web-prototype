@@ -14,7 +14,7 @@ export default class Navigation extends React.Component {
 
   render() {
     return (
-      <nav className="flex items-center justify-between flex-wrap bg-blue-500 p-6">
+      <nav className="flex items-center justify-between flex-wrap bg-blue-500 py-6 px-6 lg:px-56 md:px-32">
         <div className="flex items-center flex-shrink-0 text-white mr-6">
           <Link to="/" className="font-semibold text-xl tracking-tight my-auto">
             NOVAK

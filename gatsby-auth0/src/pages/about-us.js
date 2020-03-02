@@ -4,7 +4,7 @@ import TeamEntry from "../components/aboutUs/teamEntry"
 
 export default () => (
   <Layout>
-    <div className="py-6 px-6">
+    <div className="py-6 px-6 md:mx-32 lg:mx-56">
       <h1 className="text-4xl text-center">Our Mission</h1>
       <p className="pt-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
