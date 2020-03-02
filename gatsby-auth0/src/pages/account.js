@@ -1,6 +1,6 @@
 import React from "react"
 import { Router, navigate } from "@reach/router"
-import { isAuthenticated, getProfile, logout } from "../utils/auth"
+import { isAuthenticated, getProfile} from "../utils/auth"
 import Layout from "../components/layout"
 import Home from "./account/home"
 import Settings from "./account/settings"

@@ -1,7 +1,6 @@
 import React from "react"
-import { isAuthenticated, signup, login } from "../utils/auth"
+import { signup, login } from "../utils/auth"
 import { Link } from "gatsby"
-import { navigate } from "@reach/router"
 import Layout from "../components/layout"
 import LoginForm from "../components/account/loginForm"
 
