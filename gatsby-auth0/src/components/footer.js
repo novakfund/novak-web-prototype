@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default () => (
   <div className="w-full bg-blue-800 text-white">
-    <div className="flex justify-between px-6 py-4">
+    <div className="flex mx-auto md:w-1/2 justify-between px-6 py-4">
       <div className="font-semibold my-auto">
         <Link to="/">NOVAK FUND LLC</Link>
       </div>
